@@ -37,7 +37,6 @@
 //     }
 // };
 
-
 //   return (
 //     <div className="container" id="about">
 //       <div className="left-col left-col-img">
@@ -86,7 +85,27 @@
 // };
 
 // export default ContactForm;
-
+// const onSubmit = async (data) => {
+//   try {
+//     setLoading(true);
+//     await axios.post(`${apiUrl}/api/send-email`, data);
+//     setSuccessMessage('Message sent successfully!');
+//     setTimeout(() => {
+//       setSuccessMessage('');
+//     }, 5000);
+//     reset();
+//     setLoading(false);
+//   } catch (error) {
+//     reset();
+//     setLoading(false);
+//     setErrorMessage('Failed to send message. Due to Technical Errors, Try after some time');
+//     setTimeout(() => {
+//       setErrorMessage('');
+//     }, 5000);
+//   } finally {
+//     setLoading(false);
+//   }
+// };
 
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -95,7 +114,7 @@ import { FiSend } from "react-icons/fi";
 import { BsFillSendArrowUpFill } from "react-icons/bs";
 import CustomSelect from "./CustomSelect";
 import "./CustomStyles.css";
-import contact from "../Assets/contact.png"
+import contact from "../Assets/contact.png";
 const ContactForm = () => {
   const {
     register,
@@ -107,33 +126,37 @@ const ContactForm = () => {
 
   const [softwareOption, setSoftwareOption] = useState("");
   const [applicationType, setApplicationType] = useState("");
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const apiUrl = process.env.REACT_APP_API_URL;
 
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      await axios.post(`${apiUrl}/api/send-email`, data);
-      setSuccessMessage('Message sent successfully!');
+      const response = await axios.post(`${apiUrl}/api/send-email`, data);
+      setSuccessMessage(response.data.message); // Set the success message from the backend response
       setTimeout(() => {
-        setSuccessMessage('');
+        setSuccessMessage("");
       }, 5000);
       reset();
       setLoading(false);
     } catch (error) {
-      reset();
       setLoading(false);
-      setErrorMessage('Failed to send message. Due to Technical Errors, Try after some time');
+      if (error.response) {
+        setErrorMessage(error.response.data.error); // Set the error message from the backend response
+      } else {
+        setErrorMessage(
+          "Failed to send message. Due to Technical Errors, Try after some time"
+        );
+      }
       setTimeout(() => {
-        setErrorMessage('');
+        setErrorMessage("");
       }, 5000);
     } finally {
       setLoading(false);
     }
   };
-
   const handleSoftwareOptionChange = (value) => {
     setSoftwareOption(value);
     setValue("softwareOption", value); // Register the value with react-hook-form
@@ -150,21 +173,22 @@ const ContactForm = () => {
   return (
     <div className="contact-container" id="contact">
       <div className="left-col left-col-img">
-        <img
-          src={contact}
-          alt="Contact Form"
-          style={{ maxHeight: '450px' }}
-        />
+        <img src={contact} alt="Contact Form" style={{ maxHeight: "450px" }} />
       </div>
       <div className="right-col">
         <h1 className="text-xl font-bold">Contact Us</h1>
-        {errorMessage && <p className="errorMessage">{errorMessage}</p>}
-        {successMessage && <p className="successMessage">{successMessage}</p>}
+        {/* {errorMessage && <p className="errorMessage">{errorMessage}</p>}
+        {successMessage && <p className="successMessage">{successMessage}</p>} */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formInput">
             <label>Name</label>
-            <input {...register("name", { required: "Name is required!" })} placeholder="Enter your name" />
-            {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+            <input
+              {...register("name", { required: "Name is required!" })}
+              placeholder="Enter your name"
+            />
+            {errors.name && (
+              <p className="text-red-500">{errors.name.message}</p>
+            )}
           </div>
 
           <div className="formInput">
@@ -179,7 +203,9 @@ const ContactForm = () => {
               })}
               placeholder="Enter your email"
             />
-            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
           </div>
 
           <div className="formInput">
@@ -187,12 +213,14 @@ const ContactForm = () => {
             <CustomSelect
               options={[
                 { value: "yes", label: "Yes" },
-                { value: "no", label: "No" }
+                { value: "no", label: "No" },
               ]}
               onChange={handleSoftwareOptionChange}
               placeholder="Select an option"
             />
-            {errors.softwareOption && <p className="text-red-500">{errors.softwareOption.message}</p>}
+            {errors.softwareOption && (
+              <p className="text-red-500">{errors.softwareOption.message}</p>
+            )}
           </div>
 
           {softwareOption === "yes" && (
@@ -201,12 +229,17 @@ const ContactForm = () => {
               <CustomSelect
                 options={[
                   { value: "web", label: "Web Application (MERN)" },
-                  { value: "mobile", label: "Mobile Application (React Native)" }
+                  {
+                    value: "mobile",
+                    label: "Mobile Application (React Native)",
+                  },
                 ]}
                 onChange={handleApplicationTypeChange}
                 placeholder="Select application type"
               />
-              {errors.applicationType && <p className="text-red-500">{errors.applicationType.message}</p>}
+              {errors.applicationType && (
+                <p className="text-red-500">{errors.applicationType.message}</p>
+              )}
             </div>
           )}
 
@@ -214,14 +247,28 @@ const ContactForm = () => {
             <>
               <div className="formInput">
                 <label>Mobile No</label>
-                <input {...register("mobileNo", { required: "Mobile No is required!" })} placeholder="Enter your mobile number" maxLength={10} type="number" />
-                {errors.mobileNo && <p className="text-red-500">{errors.mobileNo.message}</p>}
+                <input
+                  {...register("mobileNo", {
+                    required: "Mobile No is required!",
+                  })}
+                  placeholder="Enter your mobile number"
+                  maxLength={10}
+                  type="number"
+                />
+                {errors.mobileNo && (
+                  <p className="text-red-500">{errors.mobileNo.message}</p>
+                )}
               </div>
 
               <div className="formInput">
                 <label>City</label>
-                <input {...register("city", { required: "City is required!" })} placeholder="Enter your city" />
-                {errors.city && <p className="text-red-500">{errors.city.message}</p>}
+                <input
+                  {...register("city", { required: "City is required!" })}
+                  placeholder="Enter your city"
+                />
+                {errors.city && (
+                  <p className="text-red-500">{errors.city.message}</p>
+                )}
               </div>
             </>
           )}
@@ -233,11 +280,41 @@ const ContactForm = () => {
               {...register("message", { required: "Message is required!" })}
               placeholder="Enter your message"
             />
-            {errors.message && <p className="text-red-500">{errors.message.message}</p>}
+            {errors.message && (
+              <p className="text-red-500">{errors.message.message}</p>
+            )}
           </div>
-
+          {errorMessage && (
+            <p className="errorMessage">
+              <AiOutlineCloseCircle
+                style={{ color: "red", marginRight: "5px" }}
+              />
+              {errorMessage}
+            </p>
+          )}
+          {successMessage && (
+            <p className="successMessage">
+              <AiOutlineCheckCircle
+                style={{ color: "green", marginRight: "5px" }}
+              />
+              {successMessage}
+            </p>
+          )}
           <button className="button-29" type="submit">
-            {loading ? <>Sending... <BsFillSendArrowUpFill className="m-2" color="white" size="25px" /></> : <>Send <FiSend className="m-2" color="white" size="25px" /></>}
+            {loading ? (
+              <>
+                Sending...{" "}
+                <BsFillSendArrowUpFill
+                  className="m-2"
+                  color="white"
+                  size="25px"
+                />
+              </>
+            ) : (
+              <>
+                Send <FiSend className="m-2" color="white" size="25px" />
+              </>
+            )}
           </button>
         </form>
       </div>
