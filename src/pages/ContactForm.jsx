@@ -178,8 +178,12 @@ const ContactForm = () => {
       </div>
       <div className="right-col">
         <h1 className="text-xl font-bold">Contact Us</h1>
-        {/* {errorMessage && <p className="errorMessage">{errorMessage}</p>}
-        {successMessage && <p className="successMessage">{successMessage}</p>} */}
+        {errorMessage && <p className="errorMessage"><AiOutlineCloseCircle
+                style={{ color: "red", marginRight: "5px" }}
+              />{errorMessage}</p>}
+        {successMessage && <p className="successMessage"><AiOutlineCheckCircle
+                style={{ color: "red", marginRight: "5px" }}
+              />{successMessage}</p>}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formInput">
             <label>Name</label>
@@ -285,7 +289,7 @@ const ContactForm = () => {
               <p className="text-red-500">{errors.message.message}</p>
             )}
           </div>
-          {errorMessage && (
+          {/* {errorMessage && (
             <p className="errorMessage">
               <AiOutlineCloseCircle
                 style={{ color: "red", marginRight: "5px" }}
@@ -300,7 +304,7 @@ const ContactForm = () => {
               />
               {successMessage}
             </p>
-          )}
+          )} */}
           <button className="button-29" type="submit">
             {loading ? (
               <>
