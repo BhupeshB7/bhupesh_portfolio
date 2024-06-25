@@ -136,7 +136,7 @@ const ContactForm = () => {
     try {
       setLoading(true);
       const response = await axios.post(`${apiUrl}/api/send-email`, data);
-      setSuccessMessage(response.data.message); 
+      setSuccessMessage(response.data.message||"Message sent successfully!");
       setTimeout(() => {
         setSuccessMessage("");
       }, 5000);
@@ -145,10 +145,10 @@ const ContactForm = () => {
     } catch (error) {
       setLoading(false);
       if (error.response) {
-        setErrorMessage(error.response.data.error); 
+        setErrorMessage(error.response.data.error || "Sorry,Failed to send message. Try after some time");
       } else {
         setErrorMessage(
-          "Failed to send message. Due to Technical Errors, Try after some time"
+          "Sorry, Failed to send message. Due to Technical Errors, Try after some time"
         );
       }
       setTimeout(() => {
