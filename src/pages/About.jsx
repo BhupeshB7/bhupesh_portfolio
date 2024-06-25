@@ -28,7 +28,7 @@ const About = () => {
   return (
     <div>
       <Helmet>
-        <title>About me</title>
+        <title>Bhupesh |About me</title>
         <meta name="description" content="Learn more about us on this page" />
       </Helmet>
       <div className="absolute inset-0 -z-10 h-full w-full bg-zinc-900 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:17px_34px]">

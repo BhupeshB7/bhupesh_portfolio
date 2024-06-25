@@ -107,6 +107,12 @@ nav{
   .left-col2, .right-col2 {
       flex: 1;
   }
+  .left-col2{
+    padding: 50px;
+  }
+  .right-col2{
+    padding: 30px;
+  }
 }
 .right-col p{
   font-size: 18px;
@@ -153,11 +159,11 @@ form .formInput{
 }
 .about-text{
   color: #fdf1b8;
-  font-family: "Schibsted Grotesk", sans-serif;
+  font-family: "JetBrains Mono",monospace;
   /* font-family: Georgia, "Times New Roman", Times, serif; */
   /* font-family: "Agbalumo", system-ui; */
   font-size: 19px;
-  font-weight: 550;
+  font-weight: 500;
   padding: 10px;
 }
 @media (min-width: 768px) {
@@ -258,7 +264,7 @@ form .formInput{
   box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
-.button-29:hover,.button-30 {
+.button-29:hover {
   box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
@@ -272,7 +278,7 @@ form .formInput{
   appearance: none;
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  /* box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset; */
   box-sizing: border-box;
   cursor: pointer;
   display: inline-flex;
@@ -362,7 +368,7 @@ mix-blend-mode: luminosity;
   height: 100%;
   width: 100%;
   flex-direction: column;
-  background-image: #434343;
+  /* background-image: #434343; */
 }
 .col-1,.col-2,.col-3{
   padding: 10px;

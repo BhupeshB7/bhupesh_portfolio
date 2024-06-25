@@ -171,7 +171,7 @@ const Work = () => {
         style={{
           position: "relative",
           overflow: "visible",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+          // boxShadow: "0px  3px 7px rgba(0, 0, 0, 0.6) !important",
           borderRadius: 8,
           margin: "1px",
         }}
@@ -224,7 +224,7 @@ const Work = () => {
                 <Typography variant="body2" color="text.secondary"  className="work-subtitle">
                   {project.technology}
                 </Typography>
-                <Box display="flex" justifyContent="space-around" paddingBottom={2}>
+                <Box display="flex" justifyContent="space-around" >
             <Tooltip title="View Project">
               <IconButton component="a" href={project.link} target="_blank">
                 <div  className="work-title">

@@ -95,7 +95,7 @@ const Footer = () => {
       >
         {/* Section: Social media */}
         <section
-          className="flex justify-between p-4 bg-slate-700"
+          className="flex justify-between p-4 bg-slate-800"
           // style={{ backgroundColor: "rgb(195, 185, 58)" }}
         >
           <div className="me-5">
@@ -117,7 +117,7 @@ const Footer = () => {
             ))}
           </div>
         </section>
-        <section className="footer-content">
+        <section className="footer-content "style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
           <div className="col-1">
             <motion.img
               className="footer-logo"

@@ -11,13 +11,19 @@ export const GlobalStyle = createGlobalStyle`
 
   p, h1, h2, h3, h4, h5, h6 {
     color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
+     font-family: "JetBrains Mono",monospace;
   }
 
   .card-container {
     background-color: ${({ theme }) =>
-      theme === "light" ? "#f8f9fa" : "#333"} !important;
-    border: 1px solid ${({ theme }) => (theme === "light" ? "#ddd" : "#444")} !important;
+      theme === "light" ? "#f8f9fa" : "#111"} !important;
+    // border: 1px solid ${({ theme }) =>
+      theme === "light" ? "#ddd" : "#444"} !important;
     border-radius: 8px;
+    box-shadow:${({ theme }) =>
+      theme === "light"
+        ? "0px 2px 4px rgba(0,0,0,0.5) !important"
+        : "0px 1px 2px rgba(255,255,255,0.5) !important"};
     transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 .contact-container {
@@ -27,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
   padding: 20px;
   margin: auto;
   background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#000")};
+    
 }
   .formInput label{
   color: gray;
@@ -113,17 +120,24 @@ select option {
   }
   .work-title{
     color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
+     font-family: "JetBrains Mono",monospace;
+  font-size: 18px;
+  font-weight: 550;
     }
   .work-subtitle{
     color: ${({ theme }) => (theme === "light" ? "#444" : "#E2DDDD")};
+     font-family: "JetBrains Mono",monospace;
+  font-size: 14px;
+  font-weight: 500;
     }
   .testimonial-bg{
-    background-color: ${({ theme }) => (theme === "light" ? "#ffffff" : "#000")};
+    background-color: ${({ theme }) =>
+      theme === "light" ? "#ffffff" : "#000"};
     }
 
     
     .button-30{
       background-color: ${({ theme }) =>
-      theme === "light" ? "#f8f9fa" : "#333"};
+        theme === "light" ? "#fff" : "#111"};
     }
 `;

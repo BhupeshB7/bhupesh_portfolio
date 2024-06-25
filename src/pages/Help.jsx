@@ -134,7 +134,7 @@ const Help = () => {
         </form>
       </div>
     </section>
-    <Step/>
+    {/* <Step/> */}
     <Footer/>
     </>
   );

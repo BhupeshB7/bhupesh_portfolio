@@ -136,7 +136,7 @@ const ContactForm = () => {
     try {
       setLoading(true);
       const response = await axios.post(`${apiUrl}/api/send-email`, data);
-      setSuccessMessage(response.data.message); // Set the success message from the backend response
+      setSuccessMessage(response.data.message); 
       setTimeout(() => {
         setSuccessMessage("");
       }, 5000);
@@ -145,7 +145,7 @@ const ContactForm = () => {
     } catch (error) {
       setLoading(false);
       if (error.response) {
-        setErrorMessage(error.response.data.error); // Set the error message from the backend response
+        setErrorMessage(error.response.data.error); 
       } else {
         setErrorMessage(
           "Failed to send message. Due to Technical Errors, Try after some time"
