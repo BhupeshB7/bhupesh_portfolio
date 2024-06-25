@@ -182,7 +182,7 @@ const ContactForm = () => {
                 style={{ color: "red", marginRight: "5px" }}
               />{errorMessage}</p>}
         {successMessage && <p className="successMessage"><AiOutlineCheckCircle
-                style={{ color: "red", marginRight: "5px" }}
+                style={{ color: "green", marginRight: "5px" }}
               />{successMessage}</p>}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formInput">
