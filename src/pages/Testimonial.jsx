@@ -17,7 +17,7 @@ const TestimonialItem = ({ testimonial }) => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
             transition={{ duration: 0.5, delay: testimonial.id * 0.1 }}
-            className="card-container p-5 text-gray-800 font-light rounded-lg"
+            className="card-container testimonial-card p-5 text-gray-800 font-light rounded-lg"
         >
             <div className="flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
