@@ -176,7 +176,7 @@ const Work = () => {
           margin: "1px",
         }}
       >
-        <Card className="card-container">
+        <Card className="card-container work-card">
           <div style={{ position: 'relative', height: '140px' }}>
             {loadingImage && (
               <Skeleton

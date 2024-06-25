@@ -16,16 +16,19 @@ export const GlobalStyle = createGlobalStyle`
 
   .card-container {
     background-color: ${({ theme }) =>
-      theme === "light" ? "#f8f9fa" : "#111"} !important;
+      theme === "light" ? "#fff" : "#111"} !important;
     // border: 1px solid ${({ theme }) =>
       theme === "light" ? "#ddd" : "#444"} !important;
     border-radius: 8px;
+    
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+    .work-card{
     box-shadow:${({ theme }) =>
       theme === "light"
         ? "0px 2px 4px rgba(0,0,0,0.5) !important"
         : "0px 1px 2px rgba(255,255,255,0.5) !important"};
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
+    }
 .contact-container {
   display: flex;
   flex-direction: column;
