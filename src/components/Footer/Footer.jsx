@@ -88,7 +88,7 @@ const Footer = () => {
     window.location.href = "https://wa.me/918581869783";
   };
   return (
-    <div className="mt-5">
+    <div className="Pt-5">
       <footer
         className="text-center text-white"
         style={{ backgroundColor: "#1c2331" }}

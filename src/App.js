@@ -71,6 +71,7 @@ import './App.css';
 import { Background } from "./components/Header/Background";
 import Starry from './components/Header/Starry';
 import { Analytics } from '@vercel/analytics/react';
+import Contact from './components/Skeleton/Contact';
 // Lazy loading components
 const About = lazy(() => import('./pages/About'));
 const AddProject = lazy(() => import('./pages/AddProject'));
@@ -102,7 +103,10 @@ const ThemedApp = () => {
             }
           />
           <Route path="/abouts" element={<AboutS />} />
-          <Route path="/help" element={<Help />} />
+          <Route path="/help" element={
+            <Suspense fallback={<Contact />}><Help /></Suspense>
+          } 
+            />
           <Route
             path="/add-project/bhupesh"
             element={

@@ -6,6 +6,7 @@ import { BsFillSendArrowUpFill } from "react-icons/bs";
 import Footer from "../components/Footer/Footer";
 import support from "../Assets/contact.png"
 import { Step } from "./Step";
+// import ParticleComponent from "../components/ParticleComponent";
 const Help = () => {
   const {
     register,
@@ -44,7 +45,9 @@ const Help = () => {
 
   return (
     <>
-    <section className="contact-container mt-5" id="about">
+    {/* <ParticleComponent/> */}
+    <div className=" help-bg bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:21px_30px]">
+    <section className="contact-container  mt-5" id="about">
       <div className="left-col left-col-img">
         <img
         src={support}
@@ -134,6 +137,7 @@ const Help = () => {
         </form>
       </div>
     </section>
+    </div>
     {/* <Step/> */}
     <Footer/>
     </>

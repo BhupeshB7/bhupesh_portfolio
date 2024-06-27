@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   gap: 20px; /* Optional: space between columns when stacked */
   padding: 20px;
   margin: auto;
-  background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#000")};
+  // background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#000")};
     
 }
   .formInput label{
@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
   padding: 10px;
   border: 1px solid ${({ theme }) => (theme === "light" ? "gray" : "#444")};
   border-radius: 5px;
- background-color: ${({ theme }) => (theme === "light" ? "#ffffff" : "#000")};
+ background-color: ${({ theme }) => (theme === "light" ? "transparent" : "transparent")};
     color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
   box-sizing: border-box; 
   outline: none; 
@@ -60,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
   .formInput textarea:-webkit-autofill,
   .formInput textarea:-webkit-autofill:focus {
     background-color: ${({ theme }) =>
-      theme === "light" ? "#fff" : "#000"} !important;
+      theme === "light" ? "transparent" : "transparent"} !important;
     color: ${({ theme }) =>
       theme === "light" ? "#000000" : "#ffffff"} !important;
     border: 1px solid ${({ theme }) =>
@@ -90,7 +90,7 @@ select option {
 }
  .custom-select {
     color: ${({ theme }) => (theme === "light" ? "#000000" : "#ffffff")};
-   background-color: ${({ theme }) => (theme === "light" ? "#ffffff" : "#000")};
+   background-color: ${({ theme }) => (theme === "light" ? "transparent" : "transparent")};
     border: 1px solid ${({ theme }) => (theme === "light" ? "gray" : "#444")};
     padding: 10px;
     cursor: pointer;
@@ -145,4 +145,7 @@ select option {
     .button-30{
       background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#111")};
     }
+      .help-bg{
+        background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#111")};
+      }
 `;

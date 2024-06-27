@@ -25,6 +25,7 @@ import {
 } from "@mui/icons-material";
 import Contact from "../components/Skeleton/Contact";
 import { FaBackward, FaForward } from "react-icons/fa6";
+// import ParticleComponent from "../components/ParticleComponent";
 const Footer = lazy(() => import("../components/Footer/Footer"));
 const Testimonials = lazy(() => import("./Testimonial"));
 const ContactForm = lazy(() => import("./ContactForm"));
@@ -97,7 +98,7 @@ const Work = () => {
       if (inView) {
         timer = setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 10);
       }
       return () => clearTimeout(timer);
     }, [inView]);
@@ -289,6 +290,8 @@ const Work = () => {
           |
         </p>
       </div>
+      {/* <ParticleComponent/> */}
+      <div className=" help-bg bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:21px_30px]">
       <Container ref={containerRef} className="pt-3">
         <Grid container spacing={3}>
           {getprojects.map?.((project, index) => (
@@ -324,6 +327,7 @@ const Work = () => {
       <Suspense fallback={<Contact/>}>
         <ContactForm />
       </Suspense>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <Footer />
       </Suspense>

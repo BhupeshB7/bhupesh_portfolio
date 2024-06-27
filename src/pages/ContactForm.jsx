@@ -179,10 +179,10 @@ const ContactForm = () => {
       <div className="right-col">
         <h1 className="text-xl font-bold">Contact Us</h1>
         {errorMessage && <p className="errorMessage"><AiOutlineCloseCircle
-                style={{ color: "red", marginRight: "5px" }}
+                style={{ color: "red", marginLeft: "5px" }}
               />{errorMessage}</p>}
         {successMessage && <p className="successMessage"><AiOutlineCheckCircle
-                style={{ color: "green", marginRight: "5px" }}
+                style={{ color: "green", marginLeft: "5px" }}
               />{successMessage}</p>}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="formInput">
