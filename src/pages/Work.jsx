@@ -25,6 +25,7 @@ import {
 } from "@mui/icons-material";
 import Contact from "../components/Skeleton/Contact";
 import { FaBackward, FaForward } from "react-icons/fa6";
+import LoadingProject from "../components/Skeleton/LoadingProject";
 // import ParticleComponent from "../components/ParticleComponent";
 const Footer = lazy(() => import("../components/Footer/Footer"));
 const Testimonials = lazy(() => import("./Testimonial"));
@@ -98,7 +99,7 @@ const Work = () => {
       if (inView) {
         timer = setTimeout(() => {
           setLoading(false);
-        }, 10);
+        }, 1400);
       }
       return () => clearTimeout(timer);
     }, [inView]);
@@ -131,37 +132,7 @@ const Work = () => {
       setShowCodeIcons(!showCodeIcons);
     };
   
-    if (loadingProjects) {
-      return (
-        <>
-          <Card className="skeleton-card">
-            <Skeleton
-              variant="rectangular"
-              width="100%"
-              height={60}
-              style={{ borderRadius: 2, padding: '10px' }}
-            />
-            <Skeleton
-              variant="rectangular"
-              width="100%"
-              height={60}
-              style={{ borderRadius: 2, padding: '10px' }}
-            />
-            <CardContent>
-              <>
-                <Skeleton width="60%" />
-                <Skeleton width="40%" />
-                <div className="skeleton-circle-card">
-                  <Skeleton variant="circular" width={30} height={30} />
-                  <Skeleton variant="circular" width={30} height={30} />
-                </div>
-              </>
-            </CardContent>
-          </Card>
-        </>
-      );
-    }
-  
+    
     return (
       <motion.div
         ref={ref}
@@ -277,6 +248,8 @@ const Work = () => {
   const scrollToTop = () => {
     containerRef.current.scrollIntoView({ behavior: "smooth" });
   };
+ 
+
   return (
     <div>
       {/* <div className="absolute inset-0 -z-10 h-full w-full bg-zinc-900 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:17px_34px]">
@@ -292,7 +265,8 @@ const Work = () => {
       </div>
       {/* <ParticleComponent/> */}
       <div className=" help-bg bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:21px_30px]">
-      <Container ref={containerRef} className="pt-3">
+        {loadingProjects && <LoadingProject/>}
+   {!loadingProjects && getprojects.length > 0 && <Container ref={containerRef} className="pt-3">
         <Grid container spacing={3}>
           {getprojects.map?.((project, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -319,7 +293,7 @@ const Work = () => {
            <FaForward className="m-2" color="gray" size="25px"/>
           </button>
         </Box>
-      </Container>
+      </Container>}
       <div>
       <Suspense fallback={<div>Loading...</div>}>
         <Testimonials />

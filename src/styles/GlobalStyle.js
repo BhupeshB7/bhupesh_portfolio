@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .card-container {
     background-color: ${({ theme }) =>
-      theme === "light" ? "#fff" : "#111"} !important;
+      theme === "light" ? "#fff" : "#222"} !important;
    
     border-radius: 8px;
     
@@ -140,7 +140,12 @@ select option {
     background-color: ${({ theme }) =>
       theme === "light" ? "#ffffff" : "#000"};
     }
-
+  .skeleton-card{
+   background-color: ${({ theme }) =>
+      theme === "light" ? "#ffffff" : "#222"};
+   border-radius: 8px;
+   padding: 10px;
+  }
     
     .button-30{
       background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#111")};

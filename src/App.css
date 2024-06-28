@@ -353,7 +353,7 @@ mix-blend-mode: luminosity;
   width: 100% !important;
 }
 .skeleton-card{
-  box-shadow:0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  /* box-shadow:0 1px 2px rgba(0, 0, 0, 0.2) !important; */
   /* border: 2px solid #343434; */
   border-radius: 8px !important;
 }

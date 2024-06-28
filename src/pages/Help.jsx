@@ -6,6 +6,7 @@ import { BsFillSendArrowUpFill } from "react-icons/bs";
 import Footer from "../components/Footer/Footer";
 import support from "../Assets/contact.png"
 import { Step } from "./Step";
+// import Test from "./Test";
 // import ParticleComponent from "../components/ParticleComponent";
 const Help = () => {
   const {
@@ -139,6 +140,7 @@ const Help = () => {
     </section>
     </div>
     {/* <Step/> */}
+    {/* <Test/> */}
     <Footer/>
     </>
   );
