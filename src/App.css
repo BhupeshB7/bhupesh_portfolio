@@ -176,7 +176,7 @@ form .formInput{
 }
 @media (min-width: 768px) {
   .about-text {
-    font-size: 21px;
+    font-size: 19px;
     padding:34px;
     /* margin: 40px;/ */
   }
@@ -188,7 +188,28 @@ form .formInput{
     max-width: 800px;
     flex-direction: column;
   }
-  
+.circle-parent{
+  position: absolute;
+  top: 145px;
+  right: 135px;
+  width: 200px;
+  height: 200px;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  z-index: -1;
+  opacity: 0.1;
+  border-radius: 50%;
+}
+.circle-child{
+  position: absolute;
+  top: 145px;
+  right: 135px;
+  width: 100px;
+  height: 100px;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  z-index: -1;
+  opacity: 1;
+  border-radius: 50%;
+}
 }
 .about-mern{
   color: #80DEEA;
@@ -235,7 +256,19 @@ form .formInput{
   height: 50px;
   margin: auto;
 }
-
+.circle-1{
+  position: absolute;
+  top: auto;
+  bottom: 10px;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  background: none;
+  z-index: -1;
+  opacity: 0.1;
+  border-radius: 50%;
+  box-shadow: 82px 32px 121px 105px rgba(255, 149, 0, 0.9) !important;
+ } 
 
 /* About css code */
 /* work css code */
