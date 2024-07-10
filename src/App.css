@@ -170,9 +170,13 @@ form .formInput{
   font-family: "JetBrains Mono",monospace;
   /* font-family: Georgia, "Times New Roman", Times, serif; */
   /* font-family: "Agbalumo", system-ui; */
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 500;
+
   padding: 10px;
+}
+.left-col2 span{
+  font-family: "JetBrains Mono",monospace !important;
 }
 @media (min-width: 768px) {
   .about-text {
