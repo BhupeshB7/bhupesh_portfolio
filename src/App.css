@@ -178,8 +178,17 @@ form .formInput{
   .about-text {
     font-size: 21px;
     padding:34px;
-    margin: 40px;
+    /* margin: 40px;/ */
   }
+  .container-big{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    max-width: 800px;
+    flex-direction: column;
+  }
+  
 }
 .about-mern{
   color: #80DEEA;
@@ -226,6 +235,8 @@ form .formInput{
   height: 50px;
   margin: auto;
 }
+
+
 /* About css code */
 /* work css code */
 .project_button{

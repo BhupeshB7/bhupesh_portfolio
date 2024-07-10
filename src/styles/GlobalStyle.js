@@ -25,8 +25,8 @@ export const GlobalStyle = createGlobalStyle`
     .work-card{
     box-shadow:${({ theme }) =>
       theme === "light"
-        ? "0px 2px 4px rgba(0,0,0,0.5) !important"
-        : "0px 1px 2px rgba(255,255,255,0.5) !important"};
+        ? "0px 0px 50px 5px rgba(255,149,5,0.3)  !important"
+        : "1px 2px 3px rgba(255,255,255,0.3) !important"};
     }
         .testimonial-card{
         border: 1px solid ${({ theme }) =>
@@ -151,6 +151,6 @@ select option {
       background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#111")};
     }
       .help-bg{
-        background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#111")};
+        // background-color: ${({ theme }) => (theme === "light" ? "#fff" : "#111")};
       }
 `;

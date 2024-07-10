@@ -6,7 +6,7 @@ import R from '../Assets/R.png';
 import N from '../Assets/N.png';
 import { IoIosCloseCircle } from "react-icons/io";
 const About = () => {
-    const skills = [ "HTML", "CSS", "redux","node.js","react native","JavaScript","react.js","express.js","mongoDB","bootstrap","tailwind","git","github","java"]
+    const skills = [ "CSS", "redux","node.js","react.js","JavaScript","react native","java","express.js","mongoDB","bootstrap","tailwind","git","github","Linux"]
     const mern = [
         {name:"M",
         icon:M,
@@ -28,8 +28,11 @@ const About = () => {
   return (
     <div>
       <Helmet>
-        <title>Bhupesh |About me</title>
-        <meta name="description" content="Learn more about us on this page" />
+        <title>Bhupesh|About me</title>
+        <meta name="description" content="Learn more about Bhupesh Kumar, a full stack developer proficient in HTML, CSS, JavaScript, React, Node.js, and more. Explore my skills and expertise in building scalable web applications." />
+        <meta name="keywords" content="Full Stack Developer, MERN Stack, HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, Redux, React Native, Web Development" />
+        <meta name="author" content="Bhupesh" />
+        <link rel="canonical" href="https://bhupeshb7portfolio.vercel.app/about" />
       </Helmet>
       <div className="absolute inset-0 -z-10 h-full w-full bg-zinc-900 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:17px_34px]">
         <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-orange-400 opacity-20 blur-[90px]" />
@@ -39,6 +42,7 @@ const About = () => {
         <IoIosCloseCircle className="close_icon" onClick={() => window.location.href = "/"} />
         </div>
         <h5 className="text-center text-amber-100 text-xl">About me</h5>
+        <div className="container-big">
         <p className="about-text">
           I'm a full stack developer with expertise in both front-end and
           back-end technologies. I build seamless, user-friendly web
@@ -46,6 +50,7 @@ const About = () => {
           interface design. My goal is to create efficient, scalable, and
           high-quality software solutions.
         </p>
+        
         <div className="container2">
         <div className="left-col2">
         {skills.map((skill, index) => (
@@ -80,6 +85,7 @@ const About = () => {
       ))}
     </div>
       </div>
+        </div>
         </div>
       </div>
     </div>
