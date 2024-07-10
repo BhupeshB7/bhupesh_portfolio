@@ -7,20 +7,23 @@ import N from "../Assets/N.png";
 import { motion } from "framer-motion";
 import { IoIosCloseCircle } from "react-icons/io";
 const About = () => {
+  React.useEffect(() => {
+    document.querySelector('meta[name=theme-color]').setAttribute('content', '#282828');
+  }, []);
   const skills = [
-    "CSS",
-    "redux",
-    "node.js",
     "react.js",
     "JavaScript",
-    "react native",
+    "CSS",
+    "node.js",
+    "redux",
     "java",
+    "react native",
     "express.js",
     "mongoDB",
     "bootstrap",
-    "tailwind",
-    "git",
     "github",
+    "git",
+    "tailwind",
     "Linux",
   ];
   const mern = [
