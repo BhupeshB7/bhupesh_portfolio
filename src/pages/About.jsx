@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { IoIosCloseCircle } from "react-icons/io";
 const About = () => {
   React.useEffect(() => {
-    document.querySelector('meta[name=theme-color]').setAttribute('content', '#282828');
+    document.querySelector('meta[name=theme-color]').setAttribute('content', '#222222');
   }, []);
   const skills = [
     "react.js",
